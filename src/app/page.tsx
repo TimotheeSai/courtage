@@ -1,113 +1,160 @@
-import Image from 'next/image'
+import Image from "next/image";
+import Link from "next/link";
+import buildingBg from "public/building.jpg";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      <h1 className="h-12 leading-6 font-semibold text-xl text-center">
+        VOTRE INTERLOCUTEUR EN{" "}
+        <span className="text-red-800">PRÊTS IMMOBILIERS</span> ET{" "}
+        <span className="text-red-800">ASSURANCES EMPRUNTEURS</span> …
+      </h1>
+      <div className="h-96 relative p-8">
+        <Image
+          src={buildingBg}
+          alt="building background"
+          className="absolute -z-10 top-0 object-cover"
+          fill
+          // width={100}
+          // height={24}
+          // priority
+        />
+        <div className="h-80 p-4 rounded-xl border backdrop-blur-sm  bg-white/30 max-w-screen-xl m-auto flex gap-8">
+          <div className="flex text-lg justify-between flex-col">
+            {/* <div className="flex-1"> */}
+            <div className="font-semibold">
+              LES <span className="text-red-800">TAUX</span> D’INTERET DU MOIS:
+            </div>
+            <div>
+              <div className="font-bold">Durée de votre pret</div>
+              <div className="flex gap-4 justify-center flex-wrap">
+                <Button variant="outline">7 ans</Button>
+                <Button variant="outline">10 ans</Button>
+                <Button variant="outline">15 ans</Button>
+                <Button variant="outline">20 ans</Button>
+                <Button variant="outline">25 ans</Button>
+              </div>
+            </div>
+            <div>
+              <div className="font-bold">La region de votre projet</div>
+              <div className="flex gap-4 justify-center flex-wrap">
+                <Button variant="outline">National</Button>
+                <Button variant="outline">Nord</Button>
+                <Button variant="outline">Est</Button>
+                <Button variant="outline">Ouest</Button>
+                <Button variant="outline">Sud-Est</Button>
+                <Button variant="outline">Sud-Ouest</Button>
+                <Button variant="outline">Paris IDF</Button>
+                <Button variant="outline">Rhones Alpes</Button>
+              </div>
+            </div>
+            {/* </div> */}
+          </div>
+          <Card className="w-1/3 flex flex-col justify-between bg-red-400/30 rounded-xl p-4 items-center gap-2">
+            <CardHeader>
+              <CardTitle className="font-semibold">Top taux</CardTitle>
+              <CardDescription>Card Description</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-2xl font-bold">4%</p>
+            </CardContent>
+            <CardFooter>
+              <Link
+                href="/obtenir-un-pret"
+                className="border rounded-lg bg-white/50 p-2 self-stretch"
+              >
+                J&apos;obtient mon prêt en 2 minutes
+              </Link>
+            </CardFooter>
+          </Card>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="m-auto divide-y divide-red-800 max-w-5xl">
+        <div className="text-xl leading-5 my-4 mt-12">
+          POURQUOI SIGNATURE COURTAGE EST LE MEILLEUR INTERLOCUTEUR POUR VOTRE
+          PROJET IMMOBILIER
+        </div>
+        <div className="my-8 text-center">
+          <div className="my-8 text-lg leading-5">
+            UN COURTIER INDEPENDANT QUI TRAVAILLE AVEC TOUS LES ORGANISMES
+            BANCAIRES
+          </div>
+          <div>
+            En qualité de courtiers indépendants nous avons la capacité de
+            travailler avec la totalité des prêteurs du marché français, y
+            compris les institutions fermées aux particuliers. Grâce à ce large
+            panel d’organismes nous pouvons comparer efficacement les offres de
+            prêt et vous apporter des propositions de qualité en adéquation avec
+            vos objectifs personnels !
+          </div>
+        </div>
+        <div className="my-8 text-center">
+          <div className="my-8 text-lg leading-5">
+            UNE ECONOMIE DE TEMPS CONSEQUENTE ET UN ACCOMPAGNEMENT ADMINSITRATIF
+            AVANCE
+          </div>
+          <div>
+            Le courtier Signature Courtage se chargent de la recherche, de la
+            négociation et de l’obtention de votre crédit mais son travail ne
+            s’arrête pas là ! Il vous accompagne également en rendez-vous banque
+            afin de s’assurer que toutes vos demandes ont été satisfaites et que
+            le banquier s’engage à les tenir. Il s’occupe également du déblocage
+            des fonds jusqu’au suivi de la réception chez le Notaire. Il se fera
+            un plaisir de vous aider à la rédaction et la compréhension de tous
+            les documents inhérents à l’acquisition immobilière et réduira
+            considérablement votre stress lié au processus de demande de prêt !
+          </div>
+        </div>
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="mx-auto mt-16 max-w-5xl">
+        <div className="h-12 leading-6 text-xl divide-y">
+          SUIVEZ LES ACTUALITES DU MARCHE
+        </div>
+        <Input placeholder="Posez nous votre question" />
+        <div className="mt-12 flex justify-around gap-4">
+          <Card className="w-1/3">
+            <CardHeader className="p-0">
+              <Image src={buildingBg} alt="building background" />
+              <CardTitle className="p-3">Actu</CardTitle>
+              <CardDescription className="p-3">Sous titre</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p>Card Content</p>
+            </CardContent>
+          </Card>
+          <Card className="w-1/3">
+            <CardHeader className="p-0">
+              <Image src={buildingBg} alt="building background" />
+              <CardTitle className="p-3">Actu</CardTitle>
+              <CardDescription className="p-3">Sous titre</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p>Card Content</p>
+            </CardContent>
+          </Card>
+          <Card className="w-1/3">
+            <CardHeader className="p-0">
+              <Image src={buildingBg} alt="building background" />
+              <CardTitle className="p-3">Actu</CardTitle>
+              <CardDescription className="p-3">Sous titre</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p>Card Content</p>
+            </CardContent>
+          </Card>
+        </div>
       </div>
-    </main>
-  )
+    </div>
+  );
 }
